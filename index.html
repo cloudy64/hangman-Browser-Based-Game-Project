@@ -3,31 +3,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hangman Game</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="js/app.js"></script>
+
 </head>
 <body>
+  <div class="game-model">
+    <div class="content">
+      <img src="Assets/loss.jpg">
+      <h5>Game over!</h5>
+      <p>the correct word was: <b>Apple</b></p>
+      <button class="play -again">Play again</button>
+    </div>
+    <h3 class="game-message"></h3>
+  </div>
   <div class="container"> 
     <div class="Hangman">
    <img src="Assets/hangman-0.svg">
    <h1>Hangman Game </h1>
 
    <div class="game-box">
-   <!-- <ul class="word-dispaly">
-    <li class="letter"></li>
-    <li class="letter"></li>
-    <li class="letter"></li>
-    <li class="letter"></li>
-    <li class="letter"></li>
-    <li class="letter"></li>
-    <li class="letter"></li>
-   </ul> -->
-   <h4 class="Hint-text"></h4>
+    
+    <ul class="word-display">
+      <li class="letter"></li>
+      <li class="letter guessed">a</li>
+      <li class="letter"></li>
+      <li class="letter"></li>
+      <li class="letter"></li>
+      <li class="letter"></li>
+      <li class="letter"></li>
+    </ul>
+   <h4 class="Hint-text">
    Hint:
-   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dolorum sequi fuga maxime suscipit! Ullam quae, excepturi velit alias cum voluptatum? Commodi reprehenderit sint repudiandae unde amet voluptatibus ducimus debitis.</p>
-   </div>
-   <h4 class="guesses-text"></h4>
-   Incorrect guesses:
-   <p>0/6</p>
-   <div class="keyboard"></div>
+   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </h4>
+  
+  <h4 class="guesses-text">
+    Incorrect guesses: <span>0/6</span>
+  </h4>
+</div>
+   <div class="keyboard">
    <button>a</button>
    <button>b</button>
    <button>c</button>
@@ -48,14 +63,14 @@
    <button>r</button>
    <button>s</button>
    <button>t</button>
-   <button>u</button>
+   <button>u</button> 
    <button>v</button>
    <button>w</button>
    <button>x</button>
    <button>y</button>
    <button>z</button>
  
-  
+  </div>
 
 
     </div>
