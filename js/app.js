@@ -38,20 +38,45 @@ const words = [
   },
 ];
 
+const winSound = new Audio("Assets/win.wav");
+const loseSound = new Audio("Assets/lose.mp3");
+
 let thisword;
 let currentWord, currentHint;
 let wrongGuessCount=0;
 const maxGuesses=6;
 let correctLetters=[];
+let gameEnded = false;
+
 
 const hangManImage=document.querySelector(".Hangman img");
 const wordDisplay=document.querySelector(".word-display");
 const guessesText=document.querySelector(".guesses-text ");
 const keyboardDiv=document.querySelector(".keyboard");
-const gameModal = document.querySelector(".game-modal");
+const gameModal = document.querySelector(".game-model");
+const playAgainBtn = document.querySelector(".play-again");
 
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  const resetGame = () => {
+    wrongGuessCount = 0;
+    correctLetters = [];
+    gameEnded = false;
+
+    hangManImage.src = "Assets/hangman-0.svg";
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+
+    getRandomWord();
+    gameModal.classList.remove("show");
+  };
+
+  playAgainBtn.addEventListener("click", resetGame);
+
+
+});
+ 
 const getRandomWord = () => {
   const randomObj = words[Math.floor(Math.random() * words.length)];
   currentWord = randomObj.word;
@@ -65,17 +90,25 @@ getRandomWord();
 console.log(currentWord, currentHint);
 
 const gameOver = (isWin) => {
+  gameEnded=true;
   setTimeout(() => {
     const modalText=isWin?`you find the word:` : `the correct word was :`;
 
-    gameModal.querySelector(".img").src = `../Assets/${isWin ? "win" : "loss"}.jpg`;
-      gameModal.querySelector("h4").innerText = `${isWinn? "congrats !" : "game over !"}`;
-        gameModal.querySelector("p").innerHTML = `${modalText} <p>${currentWord} </p>`;
+    document.querySelector(".content > img").src = `Assets/${isWin ? "win" : "loss"}.jpg`;
+    document.querySelector(".guesses-text").innerText = `${isWin? "congrats !" : "game over !"}`;
+        document.querySelector("p").innerHTML = `${modalText} <p>${currentWord} </p>`;
         gameModal.classList.add("show");
+
+        if (isWin) {
+          winSound.play();
+        } else {
+          loseSound.play();
+        }
   },300);
-}
+};
 
 const initialGame = (button, clickedLetter) => {
+  if(gameEnded)return
   if (thisword.toUpperCase().includes(clickedLetter)) {
     [...currentWord].forEach((letter, index) => {
       if (letter.toUpperCase() === clickedLetter) {
@@ -87,8 +120,9 @@ const initialGame = (button, clickedLetter) => {
     });
   } else {
     wrongGuessCount++;
-
-    hangManImage.src = `Assets/hangman-${wrongGuessCount}.svg`;
+    if (wrongGuessCount <= maxGuesses) {
+      hangManImage.src = `Assets/hangman-${wrongGuessCount}.svg`;
+    }
   }
   button.disabled=true;
   guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
@@ -108,5 +142,5 @@ for (let i = 0; i < alphabet.length; i++) {
     const clickedLetter = e.target.innerText; 
     initialGame(e.target, clickedLetter);
   });
-}
+};
 
