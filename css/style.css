@@ -7,18 +7,19 @@ body {
   min-height: 100vh;
   background-size: cover;
   background-color: rba(0, 0, 0, 0.4);
-  background-image: url('../Assets/background.png');
+  background-image: url("../Assets/Background.avif");
 }
 
 .container {
   width: 850px;
-  background-color: #fefefe;
+  background-color: #fefefe94;
   display: flex;
   align-items: center;   
   justify-content: center; 
   gap: 70px; 
   padding: 60px 40px;
   border-radius: 10px;
+
 }
 .hangman-box img{
   font-size: 1.45rem;
@@ -36,7 +37,9 @@ body {
 
 
 }
-
+.keyboard button[disabled]{
+  opacity: 0.6;
+}
 .word-display .letter{
   width: 28px;
   border-bottom: 3px solid #000;
@@ -77,12 +80,12 @@ body {
 }
 .keyboard button{
   color: white;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   outline: none;
   padding: 8px;
-  background: rgb(255, 208, 244);
+  background: rgba(255, 124, 157, 0.8);
   border-radius: 4px;
   text-transform: uppercase;
   width: calc(100% / 9 - 5px);
@@ -100,10 +103,17 @@ body {
   top:0;
   display: none;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
   justify-content: center;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0, 0.6);
+  transition: opacity 0.4s,ease;
+}
+.game-model.show{
+  opacity: 1;
+  pointer-events: auto;
 }
 .game-model .content
 {

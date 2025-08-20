@@ -61,7 +61,5 @@ Hangman is a word-guessing game where the computer thinks of a word and the user
 
 
 5) Additional features and functionalities for the project 
-Category selection-->(animals,colors)
 Hint system-->
-Custom themes-->(Dark mode,light mode)
 Emoji reactions-->(🎉 for win, 😢 for loss)
