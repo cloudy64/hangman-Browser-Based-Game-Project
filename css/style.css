@@ -1,3 +1,4 @@
+
 body {
   display: flex;
   align-items: center;
@@ -8,6 +9,16 @@ body {
   background-size: cover;
   background-color: rba(0, 0, 0, 0.4);
   background-image: url("../Assets/Background.avif");
+  flex-direction: column;
+}
+.page-title {
+  font-family: cursive;
+  font-size: 60px;
+  text-transform: capitalize;
+  color: #b5d7ea;
+  text-align: center;
+  margin: 40px 0 20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
 .container {
@@ -16,7 +27,7 @@ body {
   display: flex;
   align-items: center;   
   justify-content: center; 
-  gap: 70px; 
+  gap: 40px; 
   padding: 60px 40px;
   border-radius: 10px;
 
@@ -31,9 +42,10 @@ body {
 .word-display{
   display: flex;
   list-style: none;
-  gap:10px;
-  align-items: center;
+  gap:20px;
+  align-items: baseline;
   justify-content: center;
+  margin-top: 30px;
 
 
 }
@@ -41,13 +53,13 @@ body {
   opacity: 0.6;
 }
 .word-display .letter{
-  width: 28px;
+  width: 30px;
   border-bottom: 3px solid #000;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 
 
 }
@@ -58,16 +70,16 @@ body {
 
 .game-box h4{
  text-align: center;
- font-size: 1.1rem;
- font-weight: 500;
+ font-size: 25px;
  margin-bottom: 15px;
+ color:#9aa0dc;
 }
 
 .game-box h4 p {
   font-weight: 600;
 }
 
-.game-box .guesses-text span{
+ .guesses-text span{
   color: red;
 }
 
@@ -80,7 +92,7 @@ body {
 }
 .keyboard button{
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   cursor: pointer;
   outline: none;
@@ -119,10 +131,10 @@ body {
 .game-model .content
 {
 background:white ;
-max-width: 420px;
+max-width: 490px;
 width: 100%;
 text-align: center;
-border-radius: 10px;
+border-radius: 20px;
 padding: 30px;
 }
 
@@ -159,7 +171,7 @@ font-size: 1.53rem;
 
 
 .game-model p{
-  font-size: 1.15rem;
+  font-size: 30px;
   margin: 15px 0px 30px;
   font-weight: 500;
   }

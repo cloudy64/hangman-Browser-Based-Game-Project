@@ -89,22 +89,23 @@ const getRandomWord = () => {
 getRandomWord();
 
 const gameOver = (isWin) => {
-  gameEnded=true;
+  gameEnded = true;
   setTimeout(() => {
-    const modalText=isWin?`you find the word:` : `the correct word was :`;
+    const modalText = isWin ? `You found the word:` : `The correct word was:`;
 
     document.querySelector(".content > img").src = `Assets/${isWin ? "win" : "loss"}.jpg`;
-    document.querySelector(".guesses-text").innerText = `${isWin? "congrats !" : "game over !"}`;
-        document.querySelector("p").innerHTML = `${modalText} <p>${currentWord} </p>`;
-        gameModal.classList.add("show");
+    
+    document.querySelector("p").innerHTML = `${modalText} <p>${currentWord}</p>`;
+    gameModal.classList.add("show");
 
-        if (isWin) {
-          winSound.play();
-        } else {
-          loseSound.play();
-        }
-  },300);
+    if (isWin) {
+      winSound.play();
+    } else {
+      loseSound.play();
+    }
+  }, 300);
 };
+
 
 const initialGame = (button, clickedLetter) => {
   if(gameEnded)return
