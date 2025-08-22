@@ -87,7 +87,6 @@ const getRandomWord = () => {
 }
 
 getRandomWord();
-console.log(currentWord, currentHint);
 
 const gameOver = (isWin) => {
   gameEnded=true;

@@ -62,4 +62,28 @@ Hangman is a word-guessing game where the computer thinks of a word and the user
 
 5) Additional features and functionalities for the project 
 Hint system-->
-Emoji reactions-->(🎉 for win, 😢 for loss)
+picture reactions-->( for win,  for loss)
+sound if win or loss
+
+
+
+
+refrences:
+
+-i took from this the words or array of object:
+https://www.geeksforgeeks.org/javascript/build-a-hangman-game-using-javascript/
+
+-took the sounds from here:
+https://pixabay.com/sound-effects/search/
+
+-pictures win or loss from pintrest
+
+
+i used for learning some
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+Planned future enhancements:
+-Add dark mode and light mode
+-Add difficulty levels
+
+
