@@ -87,3 +87,6 @@ Planned future enhancements:
 -Add difficulty levels
 
 
+
+<img width="1680" height="1050" alt="Screenshot 2025-08-22 at 7 57 00 PM" src="https://github.com/user-attachments/assets/f81d8b3c-3363-4f2f-8dbd-9c886111c112" />
+
